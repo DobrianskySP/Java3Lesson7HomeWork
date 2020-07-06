@@ -2,16 +2,16 @@ package com.company;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
-
     public static void main(String[] args) {
-        try {
-            Method m =Main.class.getMethod("firstTest",null);
-            Annotation[] test = m.getAnnotations(SuperTest.class);
-            System.out.println("Value: " + test[0].value());
-        } catch (NoSuchMethodException e){
-            e.printStackTrace();
-        }
+        TestListener test = new TestListener();
+            test.sum();
+            test.sub();
+            test.multi();
+            test.del();
+
     }
 }
